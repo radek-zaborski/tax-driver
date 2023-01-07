@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Views/Home/Home";
 import { useState } from "react";
 import Context from "./Context/Context";
+import AddReport from "./Views/Home/AddReport/AddReport";
 
 function App() {
   const [wallet, setWallet] = useState(null);
@@ -17,7 +18,7 @@ function App() {
         <section className="w-10/12 mx-auto my-2 flex justify-center">
           <Routes>
             <Route path="/" exact element={<Home />} />
-            <Route path="/AddReport" element={""} />
+            <Route path="/AddReport" element={<AddReport />} />
             <Route path="/Events" element={""} />
           </Routes>
         </section>
