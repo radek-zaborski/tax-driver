@@ -4,14 +4,13 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 
 function AddReport() {
-  const { wallet, setWallet } = useContext(Context);
+  const { setData } = useContext(Context);
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (data) => {
-    console.log("dane z inputów:", data);
-    await setWallet({ wallet: data });
+  const onSubmit = (report) => {
+    setData({ report });
   };
-  console.log("poza funkcją:", wallet);
+
   return (
     <article className="flex flex-wrap w-full justify-center">
       <h1 className="w-full text-center mb-4">Dodaj Raport </h1>

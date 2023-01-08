@@ -7,9 +7,9 @@ import Context from "./Context/Context";
 import AddReport from "./Views/Home/AddReport/AddReport";
 
 function App() {
-  const [wallet, setWallet] = useState(null);
+  const [data, setData] = useState({});
   return (
-    <Context.Provider value={{ wallet, setWallet }}>
+    <Context.Provider value={{ data, setData }}>
       <div className="w-screen flex flex-wrap m-0">
         <header className="w-screen h-auto">
           <Header />
