@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Views/Home/Home";
 import { useState } from "react";
 import Context from "./Context/Context";
-import AddReport from "./Views/Home/AddReport/AddReport";
+import AddReport from "./Views/AddReport/AddReport";
 
 function App() {
   const [data, setData] = useState({});
