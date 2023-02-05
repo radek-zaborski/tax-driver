@@ -16,17 +16,26 @@ function AddReport() {
       <h1 className="w-full text-center mb-4">Dodaj Raport </h1>
       <form className="flex flex-wrap " onSubmit={handleSubmit(onSubmit)}>
         <div className="w-full mb-3 flex">
-          <label className="w-60 mx-1">Kwota Brutto</label>
+          <label className="w-60 mx-1">Zarobek z Bolt'a (brutto)</label>
           <input
             className=" border-2 border-solid border-black"
-            {...register("brutto", { required: true })}
+            {...register(
+              "bolt",
+              {
+                validate: (numberInput) =>
+                  console.log("w funkcji", typeof parseInt(numberInput)),
+              },
+              {
+                required: true,
+              }
+            )}
           />
         </div>
         <div className="w-full mb-3 flex">
-          <label className="w-60 mx-1">Kwota Netto</label>
+          <label className="w-60 mx-1">Zarobek Uber (netto)</label>
           <input
             className="border-2 border-solid border-black"
-            {...register("netto", { required: true }, { valueAsNumber: true })}
+            {...register("uber", { required: true }, { valueAsNumber: true })}
           />
         </div>
         <div className="w-full mb-3 flex">
