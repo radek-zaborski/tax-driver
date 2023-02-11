@@ -8,7 +8,7 @@ function AddReport() {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (input) => {
-    setData({ input });
+    setData(input);
   };
 
   return (
@@ -19,66 +19,61 @@ function AddReport() {
           <label className="w-60 mx-1">Zarobek z Bolt'a (brutto)</label>
           <input
             className=" border-2 border-solid border-black"
-            {...register(
-              "bolt",
-              {
-                validate: (numberInput) =>
-                  console.log("w funkcji", typeof parseInt(numberInput)),
-              },
-              {
-                required: true,
-              }
-            )}
+            type="number"
+            step="0.01"
+            {...register("bolt")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Zarobek Uber (netto)</label>
           <input
+            type="number"
+            step="0.01"
             className="border-2 border-solid border-black"
-            {...register("uber", { required: true }, { valueAsNumber: true })}
+            {...register("uber")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Bonus</label>
           <input
             className="border-2 border-solid border-black"
-            {...register("bonus", { required: true }, { valueAsNumber: true })}
+            {...register("bonus")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Napiwki</label>
           <input
+            type="number"
+            step="0.01"
             className="border-2 border-solid border-black"
-            {...register("tip", { required: true }, { valueAsNumber: true })}
+            {...register("tip")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Trasa w km</label>
           <input
+            type="number"
+            step="0.01"
             className="border-2 border-solid border-black"
-            {...register(
-              "distanceTrip",
-              { required: true },
-              { valueAsNumber: true }
-            )}
+            {...register("distanceTrip")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Średnie spalanie L/100km</label>
           <input
+            type="number"
+            step="0.01"
             className="border-2 border-solid border-black"
-            {...register("AVG", { required: true }, { valueAsNumber: true })}
+            {...register("AVG")}
           />
         </div>
         <div className="w-full mb-3 flex">
           <label className="w-60 mx-1">Cena Paliwa za litr</label>
           <input
+            type="number"
+            step="0.01"
             className="border-2 border-solid border-black"
-            {...register(
-              "fuelPrice",
-              { required: true },
-              { valueAsNumber: true }
-            )}
+            {...register("fuelPrice")}
           />
         </div>
 

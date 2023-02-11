@@ -1,11 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Context from "../Context/Context";
 
 export function CalculateCost() {
   const { data, setData } = useContext(Context);
+  const { calculate, setCalculate } = useContext(Context);
 
-  let { bolt, distanceTrip, fuelPrice, AVG, uber, tip, bonus } = data.input
-    ? data.input
+  let { bolt, distanceTrip, fuelPrice, AVG, uber, tip, bonus } = data
+    ? data
     : {
         bolt: 0,
         distanceTrip: 0,
@@ -15,23 +16,20 @@ export function CalculateCost() {
         tip: 0,
         bonus: 0,
       };
-
+  console.log("data", data);
+  console.log("bolec", typeof bolt, bolt);
   const commision = 0.6925;
-  // brutto = parseFloat(brutto ? brutto.replace(",", ".") : 0);
-  // netto = parseFloat(netto ? netto.replace(",", ".") : 0);
-  // bonus = parseFloat(bonus ? bonus.replace(",", ".") : 0);
-  // tip = parseFloat(tip ? tip.replace(",", ".") : 0);
-  // distanceTrip = parseFloat(distanceTrip ? distanceTrip.replace(",", ".") : 0);
-  // fuelPrice = parseFloat(fuelPrice ? fuelPrice.replace(",", ".") : 0);
-  // AVG = parseFloat(AVG ? AVG.replace(",", ".") : 0);
 
-  const brutto = parseFloat((bolt * commision).toFixed(2));
+  const brutto = (bolt * commision).toFixed(2);
   const allBrutto = brutto + tip + bonus;
-  const costFuelPerKm =
-    (parseFloat(distanceTrip) / 100) * parseFloat(AVG) * parseFloat(fuelPrice);
+  const costFuelPerKm = (distanceTrip / 100) * AVG * fuelPrice;
   const totalProfit = allBrutto - costFuelPerKm;
+
+  console.log("calculate", calculate);
   console.log("brutto", typeof brutto, brutto);
   console.log("tip", typeof tip, tip);
   console.log("bonus", typeof bonus, bonus);
   console.log("całkowite brutto", typeof allBrutto, allBrutto);
+
+  return { brutto, allBrutto, costFuelPerKm, totalProfit, uber };
 }
