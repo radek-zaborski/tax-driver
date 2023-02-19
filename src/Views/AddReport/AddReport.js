@@ -48,7 +48,7 @@ function AddReport() {
     console.log("boltNetto", typeof boltNetto, boltNetto);
     let priceTrips = (AVG * (distanceTrip / 100) * fuelPrice).toFixed(2) * 1;
     console.log("priceKm:", typeof priceTrips, priceTrips);
-    let earnBeforeCommision = boltNetto + uber;
+    let earnBeforeCommision = (boltNetto + uber).toFixed(2);
     console.log(
       "earnBeforeCommision:",
       typeof earnBeforeCommision,
