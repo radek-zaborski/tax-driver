@@ -9,6 +9,8 @@ function AddReport() {
   const { register, handleSubmit } = useForm();
   const onSubmit = (input) => {
     let {
+      commisionUber,
+      commisionBolt,
       bolt,
       distanceTrip,
       fuelPrice,
@@ -19,6 +21,8 @@ function AddReport() {
       bonusBolt,
     } = input;
 
+    commisionUber = commisionUber * 1;
+    commisionBolt = commisionBolt * 1;
     bolt = bolt * 1;
     distanceTrip = distanceTrip * 1;
     fuelPrice = fuelPrice * 1;
@@ -28,16 +32,16 @@ function AddReport() {
     bonusUber = bonusUber * 1;
     bonusBolt = bonusBolt * 1;
 
-    // console.log(
-    //   typeof bolt,
-    //   typeof distanceTrip,
-    //   typeof fuelPrice,
-    //   typeof AVG,
-    //   typeof uber,
-    //   typeof tip,
-    //   typeof bonusBolt,
-    //   typeof bonusUber
-    // );
+    console.log(
+      typeof bolt,
+      typeof distanceTrip,
+      typeof fuelPrice,
+      typeof AVG,
+      typeof uber,
+      typeof tip,
+      typeof bonusBolt,
+      typeof bonusUber
+    );
 
     let commision = 0.25 * 1.23;
     console.log("commision", commision);
@@ -80,10 +84,13 @@ function AddReport() {
   };
 
   return (
-    <article className="flex flex-wrap w-full justify-center">
-      <h1 className="w-full text-center mb-4">Dodaj Raport </h1>
-      <form className="flex flex-wrap " onSubmit={handleSubmit(onSubmit)}>
-        <div className="w-full mb-3 flex">
+    <article className="flex flex-wrap w-full h- justify-center max-w-3xl	mt-10">
+      <h1 className="w-full text-center mb-10 text-lg font-medium">
+        Dodaj Raport{" "}
+      </h1>
+
+      <form className="flex flex-wrap  " onSubmit={handleSubmit(onSubmit)}>
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Zarobek z Bolt'a (brutto)</label>
           <input
             className=" border-2 border-solid border-black"
@@ -92,7 +99,7 @@ function AddReport() {
             {...register("bolt")}
           />
         </div>
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Zarobek Uber</label>
           <input
             type="number"
@@ -111,7 +118,7 @@ function AddReport() {
             {...register("bonusUber")}
           />
         </div> */}
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Bonus Bolt</label>
           <input
             type="number"
@@ -120,7 +127,7 @@ function AddReport() {
             {...register("bonusBolt")}
           />
         </div>
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Napiwki Bolt</label>
           <input
             type="number"
@@ -129,7 +136,7 @@ function AddReport() {
             {...register("tip")}
           />
         </div>
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Trasa w km</label>
           <input
             type="number"
@@ -138,7 +145,7 @@ function AddReport() {
             {...register("distanceTrip")}
           />
         </div>
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Średnie spalanie L/100km</label>
           <input
             type="number"
@@ -147,7 +154,7 @@ function AddReport() {
             {...register("AVG")}
           />
         </div>
-        <div className="w-full mb-3 flex">
+        <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1">Cena Paliwa za litr</label>
           <input
             type="number"

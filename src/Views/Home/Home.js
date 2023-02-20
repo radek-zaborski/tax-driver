@@ -20,10 +20,7 @@ function Home() {
       </header>
       <article>
         <p>Całkowity zarobek brutto {totalEarn} zł</p>
-        <p>
-          {" "}
-          Zysk Uber: {(parseFloat(uber) + parseFloat(boltBrutto)).toFixed(2)} zł
-        </p>
+        <p> Zysk Uber: {uber} zł</p>
         <p>Zysk Bolt: {boltBrutto} zł</p>
         <p>całkowity zysk przed opodatkowaniem: {earnBeforeCommision} zł</p>
         <p>
