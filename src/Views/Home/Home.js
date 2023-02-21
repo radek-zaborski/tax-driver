@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Context from "../../Context/Context";
 function Home() {
-  const { data, setData } = useContext(Context);
+  const { data } = useContext(Context);
   const {
     totalEarn,
     earnMinusCommisionPartners,
@@ -14,24 +14,26 @@ function Home() {
   } = data;
   console.log("data w home:", data);
   return (
-    <section>
-      <header className="my-5">
+    <section className="mt-20 font-medium">
+      <header className="my-5 text-lg">
         <h1>Zarobki</h1>
       </header>
-      <article>
-        <p>Całkowity zarobek brutto {totalEarn} zł</p>
-        <p> Zysk Uber: {uber} zł</p>
-        <p>Zysk Bolt: {boltBrutto} zł</p>
-        <p>całkowity zysk przed opodatkowaniem: {earnBeforeCommision} zł</p>
-        <p>
+      <article className="text-lg">
+        <p className="mb-3">Całkowity zarobek brutto: {totalEarn} zł</p>
+        <p className="mb-1"> Zysk Uber: {uber} zł</p>
+        <p className="mb-3">Zysk Bolt: {boltBrutto} zł</p>
+        <p className="mb-3">
+          całkowity zysk przed opodatkowaniem: {earnBeforeCommision} zł
+        </p>
+        <p className="mb-3">
           całkowity zysk po odliczeniu podatków partnera:{" "}
           {earnMinusCommisionPartners} zł
         </p>
 
-        <p>koszt 1km: {costOneKm} zł</p>
-        <p>przejechany dystans: {distanceTrip} km</p>
-        <p>koszt całego przejazdu: {priceTrips} zł</p>
-        <p className=" my-3 font-bold text-xl">
+        <p className="mb-1">koszt 1km: {costOneKm} zł</p>
+        <p className="mb-1">przejechany dystans: {distanceTrip} km</p>
+        <p className="mb-1">koszt całego przejazdu: {priceTrips} zł</p>
+        <p className=" mt-10 font-bold text-xl">
           Zysk całkowity: {totalEarn} zł
         </p>
       </article>

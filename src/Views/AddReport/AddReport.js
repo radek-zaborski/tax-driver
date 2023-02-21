@@ -1,16 +1,14 @@
 import Context from "../../Context/Context";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 
 function AddReport() {
-  const { data, setData } = useContext(Context);
+  const { setData } = useContext(Context);
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (input) => {
     let {
-      commisionUber,
-      commisionBolt,
       bolt,
       distanceTrip,
       fuelPrice,
@@ -21,8 +19,6 @@ function AddReport() {
       bonusBolt,
     } = input;
 
-    commisionUber = commisionUber * 1;
-    commisionBolt = commisionBolt * 1;
     bolt = bolt * 1;
     distanceTrip = distanceTrip * 1;
     fuelPrice = fuelPrice * 1;
@@ -84,7 +80,7 @@ function AddReport() {
   };
 
   return (
-    <article className="flex flex-wrap w-full h- justify-center max-w-3xl	mt-10">
+    <article className="flex flex-wrap w-full h- justify-center max-w-3xl	mt-10 text-lg font-bold">
       <h1 className="w-full text-center mb-10 text-lg font-medium">
         Dodaj Raport{" "}
       </h1>

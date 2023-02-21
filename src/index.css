@@ -3,7 +3,8 @@
 @tailwind utilities;
 body {
   height: 100vh;
-  background: rgb(243, 252, 243);
+
+  background: url("./images/pexels-tirachard-kumtanom-733857.jpg");
 
   background-repeat: repeat;
   background-size: cover;

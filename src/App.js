@@ -8,9 +8,10 @@ import AddReport from "./Views/AddReport/AddReport";
 
 function App() {
   const [data, setData] = useState({});
+
   return (
     <Context.Provider value={{ data, setData }}>
-      <div className="w-screen flex flex-wrap m-0">
+      <div className="w-screen flex flex-wrap m-0 ">
         <header className="w-screen h-auto">
           <Header />
         </header>
