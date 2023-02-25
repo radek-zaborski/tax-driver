@@ -12,7 +12,7 @@ function Home() {
     distanceTrip,
     costOneKm,
   } = data;
-  console.log("data w home:", data);
+
   return (
     <section className="mt-20 font-medium">
       <header className="my-5 text-lg">

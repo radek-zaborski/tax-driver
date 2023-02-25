@@ -87,81 +87,78 @@ function AddReport() {
 
       <form className="flex flex-wrap  " onSubmit={handleSubmit(onSubmit)}>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Zarobek z Bolt'a (brutto)</label>
+          <label className="w-60 mx-1 place-self-center		">
+            Zarobek z Bolt'a (brutto)
+          </label>
           <input
-            className=" border-2 border-solid border-black"
+            className=" border-2 rounded-2xl px-4 py-1 border-solid border-black"
             type="number"
             step="0.01"
             {...register("bolt")}
           />
         </div>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Zarobek Uber</label>
+          <label className="w-60 mx-1 place-self-center	">Zarobek Uber</label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className="border-2 rounded-2xl px-4 py-1 border-solid border-black"
             {...register("uber")}
           />
         </div>
-        {/* ---- for develop in the future!! ---
-        <div className="w-full mb-3 flex">
-          <label className="w-60 mx-1">Bonus Uber</label>
-          <input
-            type="number"
-            step="0.01"
-            className="border-2 border-solid border-black"
-            {...register("bonusUber")}
-          />
-        </div> */}
+
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Bonus Bolt</label>
+          <label className="w-60 mx-1 place-self-center	">Bonus Bolt</label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className="border-2 rounded-2xl px-4 py-1 border-solid border-black"
             {...register("bonusBolt")}
           />
         </div>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Napiwki Bolt</label>
+          <label className="w-60 mx-1 place-self-center	">Napiwki Bolt</label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className="border-2 rounded-2xl px-4 py-1 border-solid border-black"
             {...register("tip")}
           />
         </div>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Trasa w km</label>
+          <label className="w-60 mx-1 place-self-center	">Trasa w km</label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className="border-2 rounded-2xl px-4 py-1 border-solid border-black"
             {...register("distanceTrip")}
           />
         </div>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Średnie spalanie L/100km</label>
+          <label className="w-60 mx-1 place-self-center	">
+            Średnie spalanie L/100km
+          </label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className="border-2 rounded-2xl px-4 py-1 border-solid border-black"
             {...register("AVG")}
           />
         </div>
         <div className="w-full mb-3 flex justify-center	">
-          <label className="w-60 mx-1">Cena Paliwa za litr</label>
+          <label className="w-60 mx-1 place-self-center	">
+            Cena Paliwa za litr
+          </label>
           <input
             type="number"
             step="0.01"
-            className="border-2 border-solid border-black"
+            className=" rounded-2xl px-4 py-1 border-2 border-solid border-black"
             {...register("fuelPrice")}
           />
         </div>
 
         <input
-          className="hover:bg-slate-300 cursor-pointer mx-auto my-10 border-solid border-2 py-1 px-3 rounded-md border-black"
+          className="bg-emerald-100 w-40 text-center hover:bg-emerald-300 duration-300	 cursor-pointer mx-auto my-10 border-solid border-2 py-1 px-3 rounded-2xl border-black"
           type="submit"
         />
       </form>
