@@ -9,8 +9,14 @@ function Header() {
           <li className="h-full w-1/3 flex items-center justify-center">
             <NavLink
               to="/"
-              className="hover:text-violet-600 duration-300"
-              activeStyle="text-black"
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "text-violet-600 duration-300"
+                  : "hover:text-green-800 hover:border-b-green-800 hover:border-b-2 hover:border-b-solid duration-100"
+              }
+
+              // hover:
+              // activeStyle="text-black"
             >
               Strona główna
             </NavLink>
@@ -18,7 +24,11 @@ function Header() {
           <li className="h-full  w-1/3 flex items-center justify-center">
             <NavLink
               to="/AddReport"
-              className="hover:text-violet-600 duration-300"
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "text-violet-600 duration-300"
+                  : "hover:text-green-800 hover:border-b-green-800 hover:border-b-2 hover:border-b-solid duration-100"
+              }
             >
               Dodaj raport
             </NavLink>
@@ -26,7 +36,11 @@ function Header() {
           <li className="h-full  w-1/3 flex items-center justify-center">
             <NavLink
               to="/Events"
-              className="hover:text-violet-600 duration-100 hover:border-b-violet-500 hover:border-b-2 hover:border-b-solid duration-300"
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "text-violet-600 duration-300"
+                  : "hover:text-green-800 hover:border-b-green-800 hover:border-b-2 hover:border-b-solid duration-100"
+              }
             >
               Wydarzenia
             </NavLink>

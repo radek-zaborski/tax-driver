@@ -17,16 +17,18 @@ function AddReport() {
       tip,
       bonusUber,
       bonusBolt,
+      boltCommision,
     } = input;
 
-    bolt = bolt * 1;
-    distanceTrip = distanceTrip * 1;
-    fuelPrice = fuelPrice * 1;
-    AVG = AVG * 1;
-    uber = uber * 1;
-    tip = tip * 1;
-    bonusUber = bonusUber * 1;
-    bonusBolt = bonusBolt * 1;
+    bolt *= 1;
+    distanceTrip *= 1;
+    fuelPrice *= 1;
+    AVG *= 1;
+    uber *= 1;
+    tip *= 1;
+    bonusUber *= 1;
+    bonusBolt *= 1;
+    boltCommision /= 100;
 
     console.log(
       typeof bolt,
@@ -36,10 +38,13 @@ function AddReport() {
       typeof uber,
       typeof tip,
       typeof bonusBolt,
-      typeof bonusUber
+      typeof bonusUber,
+      typeof boltCommision,
+      "prowizja bolt",
+      boltCommision
     );
 
-    let commision = 0.25 * 1.23;
+    let commision = boltCommision * 1.23;
     console.log("commision", commision);
     let boltBrutto = ((bolt - tip - bonusBolt) * commision).toFixed(2);
     console.log(typeof boltBrutto);
@@ -86,6 +91,17 @@ function AddReport() {
       </h1>
 
       <form className="flex flex-wrap  " onSubmit={handleSubmit(onSubmit)}>
+        <div className="w-full mb-16  flex justify-center	">
+          <label className="w-60 mx-1 place-self-center		">
+            Prowizja Bolt w %
+          </label>
+          <input
+            className=" border-2 rounded-2xl px-4 py-1 border-solid border-black"
+            type="number"
+            step="0.01"
+            {...register("boltCommision")}
+          />
+        </div>
         <div className="w-full mb-3 flex justify-center	">
           <label className="w-60 mx-1 place-self-center		">
             Zarobek z Bolt'a (brutto)
