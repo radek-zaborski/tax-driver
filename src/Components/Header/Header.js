@@ -9,25 +9,31 @@ function Header() {
           <li className="h-full w-1/3 flex items-center justify-center">
             <NavLink
               to="/"
-              className="hover:text-violet-600"
+              className="hover:text-violet-600 duration-300"
               activeStyle="text-black"
             >
               Strona główna
             </NavLink>
           </li>
           <li className="h-full  w-1/3 flex items-center justify-center">
-            <NavLink to="/AddReport" className="hover:text-violet-600">
+            <NavLink
+              to="/AddReport"
+              className="hover:text-violet-600 duration-300"
+            >
               Dodaj raport
             </NavLink>
           </li>
           <li className="h-full  w-1/3 flex items-center justify-center">
-            <NavLink to="/Events" className="hover:text-violet-600">
+            <NavLink
+              to="/Events"
+              className="hover:text-violet-600 duration-100 hover:border-b-violet-500 hover:border-b-2 hover:border-b-solid duration-300"
+            >
               Wydarzenia
             </NavLink>
           </li>
         </ul>
       </nav>
-      <div className="hover:text-violet-600 cursor-pointer h-full pr-8 w-2/6 border-solid border-l-black border-l flex justify-end items-center">
+      <div className="hover:text-violet-600  cursor-pointer h-full pr-8 w-2/6 border-solid border-l-black border-l flex justify-end items-center">
         logowanie
       </div>
     </div>
